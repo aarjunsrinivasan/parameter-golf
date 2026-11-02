@@ -1,0 +1,18 @@
+{
+  "track": "non_record_16mb",
+  "date": "2026-10-28",
+  "name": "GDN Hybrid at 32k on H100: FlashAttention-3 and an aligned head dim",
+  "author": "Arjun",
+  "github_id": "aarjunsrinivasan",
+  "val_bpb": 1.3908,
+  "val_loss": 2.3483,
+  "context_length": 32768,
+  "seeds": [1342, 42],
+  "seed_results": {
+    "1342": { "val_bpb": 1.3902, "val_loss": 2.3474 },
+    "42": { "val_bpb": 1.3913, "val_loss": 2.3492 }
+  },
+  "bytes_total": 14547635,
+  "bytes_code": 57594,
+  "notes": "GDN hybrid 5x64 (GDN_N_HEADS=5 GDN_HEAD_DIM_RATIO=0.72), ATTN_BACKEND=fa3, WARMDOWN_FRAC=0.36 MUON_MOMENTUM_WARMUP_FRAC=0.18, 1x H100, 600 s. 2-seed mean. FA3 full-attention baseline at the same settings: 1.4829 (delta -0.092). See README."
+}
