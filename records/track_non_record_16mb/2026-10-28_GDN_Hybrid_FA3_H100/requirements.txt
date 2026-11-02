@@ -1,0 +1,22 @@
+# Pinned to the versions the original 2026-04-04 record ran on (PyTorch 2.9.1+cu128,
+# Python 3.12), so that ATTN_BACKEND=sdpa reproduces it rather than merely resembling it.
+# The original folder's requirements.txt left flash-linear-attention unpinned.
+#
+# Setup with uv (see README.md for the full sequence):
+#   uv venv --python 3.12 .venv        # must be a uv-managed CPython -- see README
+#   uv pip install torch==2.9.1 --torch-backend=cu128
+#   uv pip install -r requirements.txt
+#
+# NOTE: torch is intentionally NOT listed here. It needs --torch-backend=cu128 to
+# resolve the right wheel, so install it first with the command above.
+
+flash-linear-attention==0.4.2
+kernels==0.16.0
+numpy
+tqdm
+huggingface-hub
+setuptools
+typing-extensions==4.15.0
+datasets
+tiktoken
+sentencepiece
